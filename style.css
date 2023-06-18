@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+:root{
+    --green: #16ff00;
+    --white: #f5f5f5;
+    --gray: #cdcccc;
+    --black: #121212;
+}
+/* Standart tanimlama ve stil sifirlama */
+a{
+    text-decoration:none;
+    color:var(--white);
+}
+
+h1, h2, h3 , h4{
+    font-family: 'Inter';
+    color:var(--white);
+
+}
+
+p{
+    font-family: 'Poppins';
+    color:var(--gray);
+
+}
+section{
+    padding:30px;
+}
+
+button{
+ font-family:'Poppins';
+ border:none;
+ cursor:pointer;
+ padding:7px 20px;
+ font-size:12px;
+ font-weight:600;
+ border-radius:16px;
+ transition:all 0.3s;
+}
+
+button:hover{
+    scale:0.95;
+    box-shadow:2px 2px 20px var(--gray);
+    transition:all 0.4s;
+}
+
+/*  Ana Stiller */
+body{
+    background: var(--black);
+    overflow-x:hidden;
+    font-family: 'Poppins';
+}
+
+/* Header */
+
+header{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    position:sticky;
+    top:0;
+    background:var(--black);
+    z-index:10;
+
+
+}
+
+header .nav-btn{
+    display:none;  
+}
+
+
+header h1{
+
+}
+header nav{
+    display: flex;
+    gap:20px;
+
+}
+header nav .spec-link{
+    color:var(--green);
+}
+
+/* Footer */
+footer{
+    margin-top:300px;
+    padding:20px;
+
+}
+footer .links{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+
+}
+footer .links .link-area{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+footer form{
+    display:flex;
+    gap:20px;
+}
+footer form input{
+    padding:5px 10px;
+    border-radius:20px;
+    max-height:50px;
+}
+footer form button{
+    background-color:var(--green);
+    padding:5px 10px;
+    max-height:50px;
+    white-space:nowrap;
+}
+footer .bottom{
+    text-align:center;
+    margin-top:50px;
+    border-top: 1px solid var(--gray);
+    padding:20px;
+
+}
+
+/* Hero alani */
+#hero{
+    height:50vh;
+    background:url(./images/back.jpg);
+    background-size:cover;
+    background-attachment:fixed;
+    display:flex;
+    align-items:center;
+
+}
+#hero-inner{
+    max-width:500px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    align-items:center;
+    padding:20px;
+    margin-left:20px;
+    text-align:center;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+}
+#hero-inner h1{
+    color:var(--green);
+}
+#hero-inner button:nth-child(1){
+    background:var(--green);
+}
+
+#hero-inner p{
+    color:#f5f5f5;
+    text-shadow:3px 3px 10px black;
+}
+/* ------------------------------------------------- */
+/* Window section */
+#window-sec{
+    display:flex;
+    justify-content:space-between;
+    gap:100px;
+}
+.window-sec-info{
+    max-width:600px;
+    display:grid;
+    gap:30px;
+
+}
+.window-sec-info button{
+    max-height:60px;
+}
+.windows{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    gap:50px;
+}
+.windows .window{
+    min-width:200px;
+    height:400px;
+    background:url(./images/sec2.jpg);
+    background-attachment:fixed;background-size:cover;
+    border-radius:40px 40px 0 0;
+}
+.windows .window:nth-child(2){
+    border-radius:40px;
+}
+
+/* ---------Kartlar Alani---------- */
+.cards-sec-info{
+    max-width:600px;
+    display:grid;
+    gap:40px;
+}
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+
+}
+.card{
+    border:1px solid gray;
+    display:grid;
+    gap:20px;
+    padding:20px;
+    border-radius:10px;
+    margin-top:50px;
+
+}
+.card video{
+    width:200px;
+}
+
+
+
+
+
+
+/* Responsive Yapilar */
+
+/*  800> cihazla icin */
+@media(max-width:800px){
+    header nav{
+        display: none;
+    
+    }
+    header .nav-btn{
+        display:block;  
+    }
+    .toggle{
+        display:flex;
+        flex-direction:column;
+        position:fixed;
+        right:5px;
+        top:70px;
+        background:#6a6a6a;
+        padding:20px;
+        border-radius:20px;
+
+    }
+    #hero{
+        align-items:center;
+        justify-content:center;
+    }
+    #hero-inner{
+        margin:40px;
+    }
+}
+
+/*  800> cihazla icin */
+@media(max-width:1000px){
+    footer .links{
+        grid-template-columns:1fr 1fr;
+        row-gap:40px;
+        column-gap:50px;
+        padding:40px;
+    }
+    footer form{
+        flex-direction:column;
+        /* align-items:end; */
+    }
+    footer form input{
+        max-width:200px;
+    }
+    /* footer .links .link-area:nth-child(even){
+        text-align:end;
+    } */
+    .cards{
+        grid-template-columns:1fr;
+        place-items:center;
+    }
+    .card{
+        max-width:400px;
+    }
+
+}
+
+@media(max-width:1000px){
+    footer .links{
+        padding:5px;
+    }
+    footer .links{
+        padding: 5px;
+    }
+}
+
+@media(max-width:1200px){
+    #window-sec{
+        flex-direction:column;
+        align-items:center;
+    }
+    .window{
+        height:300px;
+    }
+}
+
+@media(min-width:1000px){
+    section{
+        padding:100px;
+    }
+}
